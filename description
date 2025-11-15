@@ -1,0 +1,13 @@
+
+
+
+ProV1版本：
+
+使用文章中"Fuzzy Support Vector Machine With Relative Density Information for Classifying Imbalanced Data"
+relative density information 来表征实例与类（adopts the K-nearest-neighbor distances to estimate the relative density）
+,类与类之间的membership degree, 而不是欧式距离
+
+实验效果表现不错在RF分类器上，测试了10个数据集，在zoo数据集上的表现较差，可能是因为数据集样本太少，类太多的原因
+
+
+ProV2版本：
