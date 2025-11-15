@@ -33,7 +33,7 @@ def create_data():
                 #oversampler = sv.Borderline_SMOTE2()
                 #oversampler = sv.kmeans_SMOTE()
                 #oversampler = sv.NRAS()
-                oversampler = sv.A_SUWO()
+                oversampler = sv.A_SUWO(n_jobs=-1)
                 print(f"==============Oversampling begin....============")
                 X_train_res, y_train_res = oversampler.fit_resample(X_train, y_train)
                 print(f"==============Oversampling End....============")
