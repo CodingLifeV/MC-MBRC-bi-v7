@@ -23,12 +23,10 @@ METRICS = ['auc', 'g_mean','f1']
 #METRICS = ['f1']
 
 # 交叉验证次数
-#N_TIMES = 10
-N_TIMES = 1
+N_TIMES = 10
 
 # 交叉验证折数
-#FOLD = 2
-FOLD = 1
+FOLD = 2
 
 
 # 方法名字
