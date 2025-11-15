@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import os
 import numpy as np
 import pandas as pd
 import smote_variants
@@ -33,7 +33,9 @@ def create_data():
                 #oversampler = sv.Borderline_SMOTE2()
                 #oversampler = sv.kmeans_SMOTE()
                 #oversampler = sv.NRAS()
-                oversampler = sv.A_SUWO(n_jobs=-1)
+                #oversampler = sv.A_SUWO(n_jobs=-1)
+                # This automatically gets the number of available CPUs (e.g., 2, 4, 8)
+                oversampler = sv.A_SUWO(n_jobs=os.cpu_count())
                 print(f"==============Oversampling begin....============")
                 X_train_res, y_train_res = oversampler.fit_resample(X_train, y_train)
                 print(f"==============Oversampling End....============")
