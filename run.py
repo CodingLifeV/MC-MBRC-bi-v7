@@ -17,13 +17,16 @@ from evaluation_binary import custom_scorer
 DATA_RES_PATH = Path(__file__).parent / 'data' / 'results'
 
 
-# ADASYN
-def evaluate_Others(classifer):
 
+def create_data():
     for name in constants.DATA_NAME:
         for partition in range(1, constants.N_TIMES + 1):
             for fold in range(1, constants.FOLD + 1):
+                print(f"====dataset name:{name},partition:{partition},fold:{fold}========")
+
                 X_train, y_train = read_data(name, partition, fold, flag='TRAIN')
+                print(f"==============read data finished....============")
+
                 #oversampler = sv.MDO()
                 #oversampler = sv.SMOTE()
                 #oversampler = sv.MWMOTE()
@@ -31,10 +34,15 @@ def evaluate_Others(classifer):
                 #oversampler = sv.kmeans_SMOTE()
                 #oversampler = sv.NRAS()
                 oversampler = sv.A_SUWO()
+                print(f"==============Oversampling begin....============")
                 X_train_res, y_train_res = oversampler.fit_resample(X_train, y_train)
+                print(f"==============Oversampling End....============")
 
+                print(f"==============write data Begin....============")
                 write_data(name, partition, fold, X_train_res, y_train_res, 'TRAIN_RES')
-
+                print(f"==============write data End....============")
+# ADASYN
+def evaluate_Others(classifer):
 
     final_results = {'dataset': [], 'F1': [], 'AUC': [], 'G-mean': []}
 
@@ -170,4 +178,5 @@ if __name__ == '__main__':
     #    evaluate(classifer)
 
     for classifer in constants.CLASSIFIERS_NAME:
-       evaluate_Others(classifer)
+        create_data()
+        #evaluate_Others(classifer)
