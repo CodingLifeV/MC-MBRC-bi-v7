@@ -1,10 +1,11 @@
 
 
 #
-DATA_NAME = ['haberman', 'new-thyroid1', 'ecoli', 'newthyroid2', 'yeast5',
-                 'yeast-2_vs_4', 'led7digit-0-2-4-5-6-7-8-9_vs_1', 'Pima', 'winequality-red-8_vs_6', 'winequality-white-3_vs_7',
-                 'pen.global', 'ecoli-0_vs_1', 'ERA', 'wpbc', 'glass2']
+#DATA_NAME = ['haberman', 'new-thyroid1', 'ecoli', 'newthyroid2', 'yeast5',
+#                 'yeast-2_vs_4', 'led7digit-0-2-4-5-6-7-8-9_vs_1', 'Pima', 'winequality-red-8_vs_6', 'winequality-white-3_vs_7',
+#                 'pen.global', 'ecoli-0_vs_1', 'ERA', 'wpbc', 'glass2']
 DATA_NAME = ['creditcard1']
+
 
 
 

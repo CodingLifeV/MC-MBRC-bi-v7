@@ -1,7 +1,7 @@
 import numpy as np
 
 import constants
-from cross_valuation import DATA_PATH
+from cross_valuation import DATA_PATH, read_data, write_data
 from preprocess_data import read_CSV
 import matplotlib.pyplot as plt
 
@@ -85,7 +85,23 @@ def plot_bars_with_custom_color_ratios_1():
     plt.show()
     1
 
+
+def testtt():
+    for name in constants.DATA_NAME:
+        for partition in range(1, 2):
+            for fold in range(1, 2):
+                print(f"==read data====dataset name:{name},partition:{partition},fold:{fold}========")
+                X_train, y_train = read_data(name, partition, fold, flag='TRAIN')
+                print(f"==writedata====dataset name:{name},partition:{partition},fold:{fold}========")
+
+                write_data(name, partition, fold, X_train, y_train, 'TRAIN_RES')
+
+    1
+
 if __name__ == '__main__':
+    testtt()
+
+    '''
     plot_bars_with_custom_color_ratios_1()
     plot_bars_with_custom_color_ratios()
 
@@ -94,7 +110,7 @@ if __name__ == '__main__':
         X, y = read_CSV(path)
         unique_labels, counts = np.unique(y, return_counts=True)
         unique_labels
-
+    '''
 #   '', 'winequality-red-8_vs_6', 'winequality-white-3_vs_7',
 #                  'pen.global', 'ecoli-0_vs_1', 'ERA', 'wpbc', 'glass2'
 # ecoli-0_vs_1 1.8
