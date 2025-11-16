@@ -77,7 +77,6 @@ def write_data(name, partition, fold, X, y, flag):
         path = DATA_FOLD_PATH / name / ('%s.%d.%d.test.csv' % (name, partition, fold))
     if(flag == 'TRAIN_RES'):
         #path = DATA_FOLD_PATH_MDO / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
-        path = DATA_FOLD_PATH_MLOS / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
         path = DATA_FOLD_PATH / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
         path = DATA_FOLD_PATH_SMOTE / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
         path = DATA_FOLD_PATH_MWMOTE / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
@@ -85,6 +84,7 @@ def write_data(name, partition, fold, X, y, flag):
         path = DATA_FOLD_PATH_kmeans_SMOTE / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
         path = DATA_FOLD_PATH_NRAS / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
         path = DATA_FOLD_PATH_A_SUWO / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
+        path = DATA_FOLD_PATH_MLOS / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
 
     # Convert X to DataFrame if it's a NumPy array
     if not isinstance(X, pd.DataFrame):

@@ -37,6 +37,7 @@ OUR_METHOD_NAME='MC-MBRC-Pro'
 # Borderline_SMOTE2(2005)  kmeans_SMOTE(2018) A_SUWO(2016) OREM(2022)
 ALL_METHOD_NAMES = ['MWMOTE' ,'Borderline_SMOTE2', 'kmeans_SMOTE', 'NRAS', 'A_SUWO', 'OREM', 'SWIMRBF', 'CCO', 'MLOS', OUR_METHOD_NAME]
 
+# large-scale数据集 SMOTE MWMOTE Borderline_SMOTE2 kmeans_SMOTE NRAS OREM
 ALL_METHOD_NAMES = ['No_Sampling', 'SMOTE', 'MWMOTE', 'Borderline_SMOTE2', 'kmeans_SMOTE', 'NRAS', 'A_SUWO', 'OREM', 'SWIMRBF', 'CCO', 'MLOS', 'cWGAN-OS', 'B2BGAN', OUR_METHOD_NAME]
 
 
