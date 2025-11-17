@@ -4,14 +4,22 @@
 DATA_NAME = ['haberman', 'new-thyroid1', 'ecoli', 'newthyroid2', 'yeast5',
                  'yeast-2_vs_4', 'led7digit-0-2-4-5-6-7-8-9_vs_1', 'Pima', 'winequality-red-8_vs_6', 'winequality-white-3_vs_7',
                  'pen.global', 'ecoli-0_vs_1', 'ERA', 'wpbc', 'glass2']
-DATA_NAME = ['creditcard1']
+DATA_NAME = ['creditcard1', 'creditcard2']
+DATA_NAME = ['kddcup10percent']
+
+
+
 
 
 #DataSet_MERGE = ['glass1']
 #最终的数据集:
-DataSet_MERGE = ['haberman', 'new-thyroid1', 'ecoli', 'newthyroid2', 'yeast5',
-                 'yeast-2_vs_4', 'led7digit-0-2-4-5-6-7-8-9_vs_1', 'Pima', 'winequality-red-8_vs_6', 'winequality-white-3_vs_7',
-                 'pen.global', 'ecoli-0_vs_1', 'ERA', 'wpbc', 'glass2']
+#DataSet_MERGE = ['haberman', 'new-thyroid1', 'ecoli', 'newthyroid2', 'yeast5',
+#                 'yeast-2_vs_4', 'led7digit-0-2-4-5-6-7-8-9_vs_1', 'Pima', 'winequality-red-8_vs_6', 'winequality-white-3_vs_7',
+#                 'pen.global', 'ecoli-0_vs_1', 'ERA', 'wpbc', 'glass2']
+
+DataSet_MERGE = ['new-thyroid1', 'Pima', 'wpbc', 'yeast5', 'yeast-2_vs_4', 'ERA',
+                    'haberman', 'ecoli', 'winequality-red-8_vs_6', 'winequality-white-3_vs_7', 'pen.global',
+                    'newthyroid2', 'ecoli-0_vs_1', 'led7digit-0-2-4-5-6-7-8-9_vs_1', 'glass2']
 
 # new dataset: diabetes(其实是pima) Biodeg seeds Parkinsons Transfusion ERA
 

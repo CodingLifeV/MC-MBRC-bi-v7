@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 import constants
 from cross_valuation import DATA_PATH, read_data, write_data
@@ -87,6 +88,8 @@ def plot_bars_with_custom_color_ratios_1():
 
 
 def testtt():
+    cleanData()
+
     for name in constants.DATA_NAME:
         for partition in range(1, 2):
             for fold in range(1, 2):
@@ -98,7 +101,48 @@ def testtt():
 
     1
 
+
+
+def cleanData():
+    import pandas as pd
+
+    # 1. 读取文件
+    # header=0 表示第一行是表头（包含 'target' 那一行）
+    df = pd.read_csv("kddcup10percent.csv", header=0)
+
+    # 2. 定义清洗函数
+    def clean_label(val):
+        # 将输入转为字符串并去除空格
+        s_val = str(val).strip()
+
+        # 如果是 0 或 '0'，保留为 0
+        if s_val == '0' or s_val == '0.0':
+            return 0
+        # 如果是 1 或 '1'，保留为 1
+        elif s_val == '1' or s_val == '1.0':
+            return 1
+        # 其他所有情况（包括攻击类型标签），全部替换为 1
+        else:
+            return 1
+
+    # 3. 获取最后一列的列名
+    last_col = df.columns[-1]
+
+    # 4. 应用清洗函数
+    df[last_col] = df[last_col].apply(clean_label)
+
+    # 5. 强制转换为整数类型
+    df[last_col] = df[last_col].astype(int)
+
+    # 6. 保存文件
+    output_file = "kddcup10percent_processed.csv"
+    df.to_csv(output_file, index=False)
+
+    print(f"✅ 处理完成！文件已保存为: {output_file}")
+    print(f"最后一列的唯一值: {df[last_col].unique()}")
+
 if __name__ == '__main__':
+
     testtt()
 
     '''

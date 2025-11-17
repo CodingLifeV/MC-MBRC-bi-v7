@@ -26,6 +26,7 @@ DATA_FOLD_PATH_kmeans_SMOTE = Path(__file__).parent / 'data' / 'folds-kmeans_SMO
 DATA_FOLD_PATH_NRAS = Path(__file__).parent / 'data' / 'folds-NRAS'
 DATA_FOLD_PATH_A_SUWO = Path(__file__).parent / 'data' / 'folds-A_SUWO'
 
+
 def get_cross_val_data(X, y, dataset_name):
     '''
     constants.N_TIMES times constants.FOLD-fold cross validation
@@ -77,14 +78,15 @@ def write_data(name, partition, fold, X, y, flag):
         path = DATA_FOLD_PATH / name / ('%s.%d.%d.test.csv' % (name, partition, fold))
     if(flag == 'TRAIN_RES'):
         #path = DATA_FOLD_PATH_MDO / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
-        path = DATA_FOLD_PATH / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
-        path = DATA_FOLD_PATH_SMOTE / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
-        path = DATA_FOLD_PATH_MWMOTE / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
-        path = DATA_FOLD_PATH_Borderline_SMOTE2 / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
-        path = DATA_FOLD_PATH_kmeans_SMOTE / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
-        path = DATA_FOLD_PATH_NRAS / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
         path = DATA_FOLD_PATH_A_SUWO / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
         path = DATA_FOLD_PATH_MLOS / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
+        path = DATA_FOLD_PATH_NRAS / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
+        path = DATA_FOLD_PATH_kmeans_SMOTE / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
+        path = DATA_FOLD_PATH / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
+        path = DATA_FOLD_PATH_Borderline_SMOTE2 / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
+        path = DATA_FOLD_PATH_SMOTE / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
+        path = DATA_FOLD_PATH_MWMOTE / name / ('%s.%d.%d.train_res.csv' % (name, partition, fold))
+
 
     # Convert X to DataFrame if it's a NumPy array
     if not isinstance(X, pd.DataFrame):
@@ -159,8 +161,9 @@ def read_CSV_non_numeric(name):
 
 
 
-if __name__ == '__main__':
 
+
+if __name__ == '__main__':
 
     # 把存在非数值型的数据集转为数值型数据
     #for name in ['lymphography', 'flare', 'car']:
@@ -178,8 +181,6 @@ if __name__ == '__main__':
         X, y = read_CSV(path)
         get_cross_val_data(X, y, name)
     '''
-
-
     # 生成训练结果数据
     for name in constants.DATA_NAME:
         get_cross_train_res_data(name)
